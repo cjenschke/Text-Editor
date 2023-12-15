@@ -4,12 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start:dev": "",
-    "start": "",
-    "server": "",
-    "build": "",
-    "install": "",
-    "client": ""
+    "start:dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "build": "cd client && npm run build",
+    "client": "cd client && npm start"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +19,9 @@
   },
   "devDependencies": {
     "concurrently": "^5.2.0",
+    "eslint": "^8.55.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1",
     "nodemon": "^3.0.2"
   }
 }
