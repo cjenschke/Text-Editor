@@ -37,7 +37,8 @@ export const getDb = async () => {
     const request = store.get(1);
     const result = await request;
     console.log('Data retrieved from the DB', result);
-    return result?.value || '';
+    // return result?.value || '';
+    return typeof result?.value === 'string' ? result.value : '';
   } catch (err) {
     console.error('getDb failed', err);
   }
